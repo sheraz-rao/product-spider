@@ -1,4 +1,7 @@
 # Web Scraping & Data Processing Task
+## Choice of Scrapy Framework
+
+Scrapy was selected for this project due to its robust architecture specifically designed for web scraping. Its built-in components like Spiders, Items, and Pipelines provide a clear and organized structure for efficient data extraction (product name, price, URL, rating) and processing. Scrapy's powerful CSS and XPath selectors enable precise targeting of information within the website's HTML. Furthermore, my prior experience with Scrapy allows for faster and more confident development, leveraging existing knowledge of its core concepts, data handling, and pagination management to deliver a reliable and effective scraping solution.
 
 ## Overview
 
@@ -65,4 +68,4 @@ CONCURRENT_REQUESTS = 10
 ```
 ## Future Improvements
 - I have not used the proxy/user-agent rotations in this project, we can implement it once needed.
-- I have used SQL-lite database (since dataset is small and we need just 1 table to save it). We can update it to use any other database if we need multiple tables to store data and data amount in big.
+- I have used SQLite database (since dataset is small and we need just 1 table to save it). We can update it to use any other database if we need multiple tables to store data and data amount in big.
