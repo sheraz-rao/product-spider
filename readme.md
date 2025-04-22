@@ -25,25 +25,42 @@ All scraped data is cleaned and stored in a local SQLite database.
 ---
 
 ## ⚙️ Setup Instructions
-Make sure you have python installed in your machine. I am using the python 3.10
+Make sure you have `Python` and `git` installed in your machine. I am using the python `3.10`.
 
-### 1. Create a Virtual Environment (optional but recommended)
+### 1. Clone project
+Clone the repo in your machine to run code
+
+```bash
+git clone https://github.com/sheraz-rao/product-spider.git
+```
+
+Use `cd` to go in the project directory. You should be in the root directory (`product_scrap`) where `scrapy.cfg` resides. So that you will be able to install dependencies and run the spider.
+
+### 2. Create a Virtual Environment (optional but recommended)
 ```bash
 python -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
 ```
-You can skip this part and just run 
+You can skip the virtual environment creation part. 
+
+Now run the following command to install dependencies.
 ```bash
 pip install -r requirements.txt
 ```
 
-### 2. Run spider and crawl data
-You can now run the spider. Just run this command in the terminal:
+### 3. Run spider and crawl data
+You can now run the spider. Just run this command in the terminal.
 ```bash
 scrapy crawl product_scrapper
 ```
 
-### 3. Check data
+You can save data in json/csv format as well by running this command
+```bash
+scrapy crawl product_scrapper -o data.json
+```
+Change the file extension as per your liking.
+
+### 4. Check data
 Your data will be saved in database. You can view data in any SQLite viewer or CLI tool:
 ```bash
 sqlite3 output/products.db
@@ -53,7 +70,7 @@ and then run:
 SELECT * FROM products;
 ```
 
-### 4. (Optional) Save data in other format
+### 5. (Optional) Save data in other format
 If you want to save in  json/csv format, run this command
 ```bash
 scrapy crawl product_scrapper -o products.json
